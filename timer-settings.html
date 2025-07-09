@@ -35,14 +35,30 @@
         <div class="explanation">
             <p>Please put in the * <em>duration for your training sessions</em> *  and the * <em>duration of your break</em> *. Please make sure to rest enough for your pokemon to be ready for the next battle.</p>
         </div>
-        <div class="start-or-cancel-buttons">
+        <div class="start-or-cancel-buttons" onclick="submitValue()">
             <button class="start-button">
-                <a href="">Start</a>
+                <a href="./timer.html">Start</a>
             </button>
             <button class="cancel-button">
                 <a href="./index.html">Cancel</a>
             </button>
         </div>
     </div>
+
+    <script>
+        function submitValue() {
+        // Get the value entered by the user
+        var input1 = document.getElementById('input-study-time');
+        var study_time = input1.value;
+
+        var input2 = document.getElementById('input-break-time');
+        var break_time = input2.value;
+        
+        // Store the value in localStorage
+        localStorage.setItem('study-time', study_time);
+        localStorage.setItem('break-time', break_time);
+        }
+    </script>
+
 </body>
 </html>
