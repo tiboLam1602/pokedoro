@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Break Time</title>
+</head>
+<body class="break-countdown-animation">
+    <script>
+
+        window.onload = function() {
+            // Get the value from localStorage
+            const value1 = localStorage.getItem('study-time'); //format: ""hh:mm"
+            const value2 = localStorage.getItem('break-time'); //format: ""hh:mm"
+            
+            // Display the value on the page
+            document.getElementById('study-time-output').innerText = "Match time: " + value1;
+            document.getElementById('break-time-output').innerText = "Break time: " + value2;;
+
+            // Convert study-time to milliseconds
+            const [hours, minutes] = value2.split(':').map(Number);
+                    const studyDuration = (hours * 60 + minutes) * 60 * 1000; // in ms
+
+                    // Get start time
+                    const startTime = new Date().getTime();
+                    const endTime = startTime + studyDuration;
+
+                    // Update countdown every second
+                    const x = setInterval(function () {
+                        const now = new Date().getTime();
+                        const distance = endTime - now;
+
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("demo").innerHTML = "⏰ Break Over!";
+
+                             // Wait 2 seconds, then go to break page
+                            setTimeout(() => {
+                                window.location.href = "celebration.html";
+                            }, 2000);
+
+                            return;
+                        }
+
+                        const remainingMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const remainingSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        document.getElementById("demo").innerHTML =
+                            "⏳ " + remainingMinutes + "m " + remainingSeconds + "s ";
+                    }, 1000);
+                };
+    </script>
+
+    <div class="content-box">                       <!-- whole window -->                   
+        <div class="header-box">                    <!-- title timer -->
+            <h1>Timer</h1>
+        </div>
+        <div class="countdown-box">
+            <p id="study-time-output"></p>
+            <p id="break-time-output"></p>
+            <p id="demo"></p>
+        </div>
+    </div>
+</body>
+</html>
+
