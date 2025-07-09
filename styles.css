@@ -1,9 +1,20 @@
-/* general */
+
 /* 1. LANDING PAGE */
 /* 2. CHOOSING TIMER SETTINGS */
 /* 3. CELEBRATION PAGE */
 
-/*** 1. LANDING PAGE ****************************************************************************************/
+/* general */
+
+a {
+    text-decoration: none;
+    color: rgb(57, 60, 62);
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*** 1. LANDING PAGE -- index.html ****************************************************************************************/
 
 
 @font-face {                        /* creating a new font */
@@ -122,6 +133,7 @@ div.poke-animation:hover {          /* animation when hovered on */
 .button-box {                       /* making the button */
     display: flex;
     font-size: 16px;
+
 }
 
 .set-timer-button:hover {           /* button hover animation */
@@ -133,12 +145,68 @@ div.poke-animation:hover {          /* animation when hovered on */
 .set-timer-button {                 /* adjusting text in button */
     font-weight: bold;
     font-family: 'Chava-Regular', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
 /***********************************************************************************************************/
 
 
-/*** 2. CHOOSING TIMER SETTINGS PAGE ***********************************************************************/
+/*** 2. CHOOSING TIMER SETTINGS PAGE -- timer-settings.html ***********************************************************************/
 
+.header-box-timer {                 /* timer title box */
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.timer-settings {               /*  */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.timer-input {
+    text-align: center;
+    padding: 5px;
+}
+
+li {
+    margin: 20px;
+    font-size: large;
+}
+
+
+.explanation {
+    text-align: center;
+}
+
+.start-or-cancel-buttons {                       /* making the button */
+    font-size: 17px;
+    padding: 0%, 10%;
+}
+
+.start-button:hover, .cancel-button:hover {           /* button hover animation */
+    background-color: rgba(51, 170, 51, .4);
+    transform: scale(1.2);
+    transition: transform o.3s ease
+}
+
+.start-button, .cancel-button {                 /* adjusting text in button */
+    font-weight: bold;
+    font-family: 'Chava-Regular', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
 /***********************************************************************************************************/
