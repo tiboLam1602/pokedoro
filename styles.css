@@ -7,4 +7,47 @@
 
 body {
     font-family: 'Chava-Regular', sans-serif;
+    font-weight: bolder;
+    background-image: url('./images/background-image-pokemon.jpg');
+    background-color: lightseagreen;
+}
+
+.content-box {
+    padding: 5%;
+    margin: 10%;
+    background-image: url('./images/content-box-background.png');
+    background-color: beige;
+    border-radius: 25px;
+    border-style: groove;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-box {
+    font-size: large;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cute-motivator-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button-box {
+    display: flex;
+}
+
+.set-timer-button {
+    font-weight: bold;
+    font-family: 'Chava-Regular', sans-serif;
 }
