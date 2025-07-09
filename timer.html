@@ -4,45 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Setting Timer</title>
+    <title>Timer</title>
 </head>
-<body>
-    <div class="content-box-timer">
-        <div class="header-box-timer">
-            <h1>Set your timer</h1>
+<body class="match-countdown-animation">
+    <script>
+
+        window.onload = function() {
+            // Get the value from localStorage
+            const value1 = localStorage.getItem('study-time'); //format: ""hh:mm"
+            const value2 = localStorage.getItem('break-time'); //format: ""hh:mm"
+            
+            // Display the value on the page
+            document.getElementById('study-time-output').innerText = "Match time: " + value1;
+            document.getElementById('break-time-output').innerText = "Break time: " + value2;;
+
+            // Convert study-time to milliseconds
+            const [hours, minutes] = value1.split(':').map(Number);
+                    const studyDuration = (hours * 60 + minutes) * 60 * 1000; // in ms
+
+                    // Get start time
+                    const startTime = new Date().getTime();
+                    const endTime = startTime + studyDuration;
+
+                    // Update countdown every second
+                    const x = setInterval(function () {
+                        const now = new Date().getTime();
+                        const distance = endTime - now;
+
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("demo").innerHTML = "⏰ Match Over!";
+
+                             // Wait 2 seconds, then go to break page
+                            setTimeout(() => {
+                                window.location.href = "break.html";
+                            }, 2000);
+
+                            return;
+                        }
+
+                        const remainingMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const remainingSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        document.getElementById("demo").innerHTML =
+                            "⏳ " + remainingMinutes + "m " + remainingSeconds + "s ";
+                    }, 1000);
+                };
+    </script>
+
+    <div class="content-box">                       <!-- whole window -->                   
+        <div class="header-box">                    <!-- title timer -->
+            <h1>Timer</h1>
         </div>
-        <div class="timer-settings">
-            <h4></h4>
-            <ul class="timer-input">
-                <li>
-                    <label for="input-study-time">Match time:</label><br>
-                    <input
-                    id="input-study-time"
-                    type="time"
-                    name="study-timer-duration"
-                    value="0:50"/>
-                </li>
-                <li>
-                    <label for="input-break-time">Resting time:</label><br>
-                    <input
-                    id="input-break-time"
-                    type="time"
-                    name="break-timer-duration"
-                    value="0:10"/>
-                </li>
-            </ul>
-        </div>
-        <div class="explanation">
-            <p>Please put in the duration for your training sessions  and the duration of your break. Please make sure to rest enough for your pokemon ready for the next battle.</p>
-        </div>
-        <div class="start-or-cancel-buttons">
-            <button class="start-button">
-                <a href="">Start</a>
-            </button>
-            <button class="cancel-button">
-                <a href="./index.html">Cancel</a>
-            </button>
+        <div class="countdown-box">
+            <p id="study-time-output"></p>
+            <p id="break-time-output"></p>
+            <p id="demo"></p>
         </div>
     </div>
 </body>
 </html>
+
