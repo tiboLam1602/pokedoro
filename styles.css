@@ -1,18 +1,24 @@
 /* general */
+/* 1. LANDING PAGE */
+/* 2. CHOOSING TIMER SETTINGS */
+/* 3. CELEBRATION PAGE */
 
-@font-face {
+/*** 1. LANDING PAGE ****************************************************************************************/
+
+
+@font-face {                        /* creating a new font */
     font-family: 'Chava-Regular';
     src: url('./fonts/chava/Chava-Regular.ttf') format('truetype');
   }
 
-body {
+body {                              /* setting font and background */
     font-family: 'Chava-Regular', sans-serif;
     font-weight: bolder;
     background-image: url('./images/background-image-pokemon.jpg');
     background-color: lightseagreen;
 }
 
-.content-box {
+.content-box {                      /* aligning boxes and setting sand background */
     padding: 5%;
     margin: 10%;
     background-image: url('./images/content-box-background.png');
@@ -25,7 +31,7 @@ body {
     align-items: center;
 }
 
-.header-box {
+.header-box {                       /* pokedoro title box */
     font-size: larger;
     font-weight: bolder;
     display: flex;
@@ -35,7 +41,7 @@ body {
     text-align: center;
 }
 
-.cute-motivator-box {
+.cute-motivator-box {               /* animation with motivation sentence box */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +51,7 @@ body {
     padding-bottom: 15px;
 }
 
-div.poke-animation {
+div.poke-animation {                /* default image before hover */
     background-image: url('./images/Poke-Images/Poke1.png');
     background-size: 10rem;
     display: flex;
@@ -59,21 +65,12 @@ div.poke-animation {
     border-color: darkgoldenrod;
 }
 
-div.poke-animation:hover {
-    display: flex;
-    width: 10rem;
-    height: 10rem;
-    justify-content: center;
-    align-items: center;
+div.poke-animation:hover {          /* animation when hovered on */
     animation: poke-animation 2s forwards;
-    animation-iteration-count: infinite;
-    object-fit: contain;
-    border-radius: 25px;
-    border-style: solid;
-    border-color: darkgoldenrod;
+    animation-iteration-count: infinite;   
 }
 
-@keyframes poke-animation {
+@keyframes poke-animation {         /* animation sequence with individual frames */
     0% {background-image: url('./images/Poke-Images/Poke1.png');
         background-size: 10rem;}
     4% {background-image: url('./images/Poke-Images/Poke2.png');
@@ -122,18 +119,26 @@ div.poke-animation:hover {
         background-size: 10rem;}
 }
 
-.button-box {
+.button-box {                       /* making the button */
     display: flex;
     font-size: 16px;
 }
 
-.set-timer-button:hover {
+.set-timer-button:hover {           /* button hover animation */
     background-color: rgba(51, 170, 51, .4);
     transform: scale(1.2);
     transition: transform o.3s ease
 }
 
-.set-timer-button {
+.set-timer-button {                 /* adjusting text in button */
     font-weight: bold;
     font-family: 'Chava-Regular', sans-serif;
 }
+
+
+/***********************************************************************************************************/
+
+
+/*** 2. CHOOSING TIMER SETTINGS PAGE ***********************************************************************/
+
+/***********************************************************************************************************/
