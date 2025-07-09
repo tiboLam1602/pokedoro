@@ -213,6 +213,10 @@ li {
 
 body.match-countdown-animation {
     background-image: url('./images/content-box-background.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #study-timer-video {
@@ -230,6 +234,7 @@ body.match-countdown-animation {
     background-color: transparent;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 .content:hover {

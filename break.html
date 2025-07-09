@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Break Time</title>
+    <title>Break Timer</title>
 </head>
-<body class="break-countdown-animation">
+<body class="match-countdown-animation">
     <script>
 
         window.onload = function() {
@@ -33,11 +33,11 @@
 
                         if (distance < 0) {
                             clearInterval(x);
-                            document.getElementById("demo").innerHTML = "⏰ Break Over!";
+                            document.getElementById("demo").innerHTML = "⏰ Match Over!";
 
                              // Wait 2 seconds, then go to break page
                             setTimeout(() => {
-                                window.location.href = "celebration.html";
+                                window.location.href = "index.html";
                             }, 2000);
 
                             return;
@@ -52,16 +52,18 @@
                 };
     </script>
 
-    <div class="content-box">                       <!-- whole window -->                   
-        <div class="header-box">                    <!-- title timer -->
-            <h1>Timer</h1>
-        </div>
-        <div class="countdown-box">
-            <p id="study-time-output"></p>
-            <p id="break-time-output"></p>
-            <p id="demo"></p>
-        </div>
+    <!-- The video -->
+    <video autoplay muted loop id="study-timer-video" class="content">
+        <source src="./videos/break-timer-video.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <br><br><h1>You did ittttt!</h1><br>
+        <h2>Enjoy your break!</h2>
+        <p id="study-time-output"></p>
+        <p id="break-time-output"></p>
+        <p id="demo"></p>
     </div>
+
 </body>
 </html>
 
