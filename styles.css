@@ -26,7 +26,7 @@ body {
 }
 
 .header-box {
-    font-size: large;
+    font-size: larger;
     font-weight: bolder;
     display: flex;
     flex-direction: column;
@@ -41,10 +41,82 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+div.poke-animation {
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+    animation: poke-animation 2s forwards;
+    animation-iteration-count: infinite;
+    object-fit: contain;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: darkgoldenrod;
+}
+
+@keyframes poke-animation {
+    0% {background-image: url('./images/Poke-Images/Poke1.png');
+        background-size: 10rem;}
+    4% {background-image: url('./images/Poke-Images/Poke2.png');
+        background-size: 10rem;}
+    8% {background-image: url('./images/Poke-Images/Poke3.png');
+        background-size: 10rem;}
+    12% {background-image: url('./images/Poke-Images/Poke4.png');
+        background-size: 10rem;}
+    16% {background-image: url('./images/Poke-Images/Poke5.png');
+        background-size: 10rem;}        
+    20% {background-image: url('./images/Poke-Images/Poke6.png');
+        background-size: 10rem;}
+    25% {background-image: url('./images/Poke-Images/Poke7.png');
+        background-size: 10rem;}
+    29% {background-image: url('./images/Poke-Images/Poke8.png');
+        background-size: 10rem;}
+    33% {background-image: url('./images/Poke-Images/Poke9.png');
+        background-size: 10rem;}
+    37% {background-image: url('./images/Poke-Images/Poke10.png');
+        background-size: 10rem;}
+    41% {background-image: url('./images/Poke-Images/Poke11.png');
+        background-size: 10rem;}
+    46% {background-image: url('./images/Poke-Images/Poke12.png');
+        background-size: 10rem;}
+    51% {background-image: url('./images/Poke-Images/Poke13.png');
+        background-size: 10rem;}
+    56% {background-image: url('./images/Poke-Images/Poke14.png');
+        background-size: 10rem;}
+    61% {background-image: url('./images/Poke-Images/Poke15.png');
+        background-size: 10rem;}
+    66% {background-image: url('./images/Poke-Images/Poke16.png');
+        background-size: 10rem;}
+    71% {background-image: url('./images/Poke-Images/Poke17.png');
+        background-size: 10rem;}
+    76% {background-image: url('./images/Poke-Images/Poke18.png');
+        background-size: 10rem;}
+    81% {background-image: url('./images/Poke-Images/Poke19.png');
+        background-size: 10rem;}
+    86% {background-image: url('./images/Poke-Images/Poke20.png');
+        background-size: 10rem;}
+    90% {background-image: url('./images/Poke-Images/Poke21.png');
+        background-size: 10rem;}
+    95% {background-image: url('./images/Poke-Images/Poke22.png');
+        background-size: 10rem;}
+    100% {background-image: url('./images/Poke-Images/Poke23.png');
+        background-size: 10rem;}
 }
 
 .button-box {
     display: flex;
+    font-size: 16px;
+}
+
+.set-timer-button:hover {
+    background-color: rgba(51, 170, 51, .4);
+    transform: scale(1.2);
+    transition: transform o.3s ease
 }
 
 .set-timer-button {
