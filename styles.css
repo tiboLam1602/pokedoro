@@ -1,0 +1,10 @@
+/* general */
+
+@font-face {
+    font-family: 'Chava-Regular';
+    src: url('./fonts/chava/Chava-Regular.ttf') format('truetype');
+  }
+
+body {
+    font-family: 'Chava-Regular', sans-serif;
+}
