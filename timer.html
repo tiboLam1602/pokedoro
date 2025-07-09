@@ -40,6 +40,13 @@
                                 window.location.href = "break.html";
                             }, 2000);
 
+                            alert("YEYYYY!! You finished a Pokédoro!! Get a good rest <3")
+
+                            const audio = new Audio('./sounds/pokemon-capture-sound.mp3');
+                            audio.muted = false;
+                            audio.play();
+
+
                             return;
                         }
 

@@ -221,7 +221,7 @@ body.match-countdown-animation {
 
 #study-timer-video {
     min-width: 100%;
-    min-height: 90%;
+    min-height: 100%;
     align-content: center;
     border-radius: 25px;
     border-style: groove;
